@@ -1,0 +1,152 @@
+{
+  "projects": [
+    {
+      "category": "Paper, Spigot & Velocity plugins",
+      "items": [
+        {
+          "name": "ViaVersion",
+          "description": "Allows the connection of newer clients to older server versions for Minecraft servers.",
+          "url": "https://hangar.papermc.io/ViaVersion/ViaVersion/versions",
+          "image": "images/viaversion.png",
+          "details": {
+            "installedOn": "Minecraft Server (1.8.8-latest)",
+            "allows": "All client versions that are newer than your server",
+            "additionalBenefits": "Less gameplay and anti-cheat issues if run on a Paper server",
+            "gettingStarted": "https://docs.viaversion.com/display/VIAVERSION/",
+            "javadocs": "https://jd.viaversion.com/",
+            "apiDevelopers": "https://viaversion.atlassian.net/wiki/spaces/VIAVERSION/pages/54067250/Basic+API+usage"
+          }
+        },
+        {
+          "name": "ViaBackwards",
+          "description": "Allows the connection of older clients to newer server versions for Minecraft servers.",
+          "url": "https://hangar.papermc.io/ViaVersion/ViaBackwards/versions",
+          "image": "images/viabackwards.png",
+          "details": {
+            "installedOn": "Minecraft Server (1.10-latest)",
+            "allows": "Client versions that are older than your server down to 1.9",
+            "wiki": "https://github.com/ViaVersion/ViaBackwards/wiki",
+            "requires": "ViaVersion"
+          }
+        },
+        {
+          "name": "ViaRewind",
+          "description": "ViaBackwards addon to allow 1.8.x and 1.7.x clients on newer server versions.",
+          "url": "https://hangar.papermc.io/ViaVersion/ViaRewind",
+          "image": "images/viarewind.png",
+          "details": {
+            "installedOn": "Minecraft Server (1.8.8-latest)",
+            "allows": "1.7.10-1.8.9 clients",
+            "additionalBenefits": "Less gameplay issues if using ViaRewind Legacy Support",
+            "requires": "ViaVersion and ViaBackwards"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Fabric & Forge mods",
+      "items": [
+        {
+          "name": "ViaFabric",
+          "description": "Client-side and server-side ViaVersion loader for Fabric",
+          "url": "https://modrinth.com/mod/viafabric/versions",
+          "image": "images/viafabric.png",
+          "details": {
+            "installedOn": "Fabric client or server (Latest minor version of 1.8, 1.14-latest)",
+            "allows": "Connecting to 1.8.8-latest servers",
+            "additionalBenefits": "Less potential for mod incompatibilities than ViaFabricPlus",
+            "gettingStarted": "https://github.com/ViaVersion/ViaFabric?tab=readme-ov-file#client-side-and-server-side-viaversion-implementation-for-fabric"
+          }
+        },
+        {
+          "name": "ViaFabricPlus",
+          "description": "Fabric mod to connect to EVERY Minecraft server version (Release, Beta, Alpha, Classic, Snapshots, Bedrock) with QoL fixes to the gameplay",
+          "url": "https://modrinth.com/mod/viafabricplus/versions",
+          "image": "images/viafabricplus.png",
+          "details": {
+            "installedOn": "Fabric client (Latest)",
+            "allows": "Connecting to classic c0.0.15 to the latest release servers",
+            "additionalBenefits": "Less gameplay and anti-cheat issues",
+            "gettingStarted": "https://github.com/ViaVersion/ViaFabricPlus/blob/main/docs/USAGE.md",
+            "apiDevelopers": "https://github.com/ViaVersion/ViaFabricPlus/blob/main/docs/DEVELOPER_API.md"
+          }
+        },
+        {
+          "name": "ViaForge",
+          "description": "Clientside loader of ViaVersion for Forge",
+          "url": "https://modrinth.com/mod/viaforge",
+          "image": "images/viaforge.png",
+          "details": {
+            "installedOn": "Forge client (Latest minor version of 1.8, 1.12, 1.14-latest)",
+            "allows": "Connecting to 1.8.8-latest servers",
+            "additionalBenefits": "Less gameplay and anti-cheat issues"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Standalone Applications - Proxies",
+      "items": [
+        {
+          "name": "ViaAAS",
+          "description": "ViaVersion as a Service - standalone ViaVersion proxy",
+          "url": "https://github.com/ViaVersion/VIAaaS/releases/tag/v0.4.19",
+          "image": "images/viaaas.webp",
+          "details": {
+            "installedOn": "Local or remote instances to any server",
+            "allows": "Connecting to 1.8.8-latest servers",
+            "additionalBenefits": "Has already running public instances"
+          }
+        },
+        {
+          "name": "ViaProxy",
+          "description": "Standalone proxy which allows players to join EVERY Minecraft server version (Classic, Alpha, Beta, Release, Bedrock)",
+          "url": "https://github.com/ViaVersion/ViaProxy/releases/tag/v3.3.3",
+          "image": "images/viaproxy.png",
+          "details": {
+            "installedOn": "Local instances to any server, or remote instances to a specific server",
+            "allows": "Connecting to classic c0.0.15-latest servers",
+            "additionalBenefits": "User-friendly graphical user interface for local instances",
+            "gettingStarted": "https://github.com/ViaVersion/ViaProxy?tab=readme-ov-file#usage-for-players-gui",
+            "apiDevelopers": "https://github.com/ViaVersion/ViaProxy?tab=readme-ov-file#developer-plugin-api"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Other Add-On projects",
+      "items": [
+        {
+          "name": "ViaBungee",
+          "description": "ViaVersion, (and optional ViaBackwards, ViaRewind, ViaAprilFools) loader for BungeeCord/Waterfall",
+          "url": "https://hangar.papermc.io/ViaVersion/ViaBungee/versions",
+          "image": "images/viabungee.png",
+          "details": {
+            "installedOn": "BungeeCord or Waterfall proxy",
+            "requires": "ViaVersion"
+          }
+        },
+        {
+          "name": "ViaSponge",
+          "description": "ViaVersion, (and optional ViaBackwards, ViaRewind, ViaAprilFools) loader for Sponge servers",
+          "url": "https://modrinth.com/plugin/viasponge/versions",
+          "image": "images/viasponge.png",
+          "details": {
+            "installedOn": "Sponge v8+",
+            "requires": "ViaVersion"
+          }
+        },
+        {
+          "name": "ViaAprilFools",
+          "description": "ViaBackwards addon to add support for some notable Minecraft snapshots",
+          "url": "https://hangar.papermc.io/ViaVersion/ViaAprilFools/versions",
+          "image": "images/viaaprilfools.png",
+          "details": {
+            "installedOn": "Paper, Velocity & ViaFabric",
+            "allows": "Connecting to some notable snapshots"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "admins": {
+    "description": "Admins are Core Developers with added ownership permissions on platforms like GitHub or Modrinth.",
+    "members": [
+      {
+        "name": "Myles",
+        "profile_picture": "https://cdn.discordapp.com/avatars/95509102796480512/04d85c81feb9f308c23ed380762a8bc0?size=1024",
+        "role": "Admin",
+        "url": "https://github.com/FormallyMyles"
+      },
+      {
+        "name": "kennytv",
+        "profile_picture": "https://cdn.discordapp.com/avatars/259465250716254210/796dc4fd95a16058177ff062276cabe5?size=1024",
+        "role": "Admin",
+        "url": "https://kennytv.eu"
+      }
+    ]
+  },
+  "core_developers": {
+    "description": "Core Developers maintain most projects and contribute significant changes across all our projects.",
+    "members": [
+      {
+        "name": "EnZaXD",
+        "profile_picture": "https://cdn.discordapp.com/avatars/635563080813903892/a8c98f3b9253d14ad9d752342a8866a3?size=1024",
+        "role": "Core Developer",
+        "url": "https://florianmichael.de"
+      }
+    ]
+  },
+  "developers": {
+    "description": "Developers work on implementing features, fixing bugs, and writing code for our projects.",
+    "members": [
+      {
+        "name": "RK_01",
+        "profile_picture": "https://cdn.discordapp.com/avatars/322424493807108106/ad08062ca82b4d939251b753600642f9?size=1024",
+        "role": "Developer",
+        "url": "https://github.com/RaphiMC"
+      },
+      {
+        "name": "Gerrygames",
+        "profile_picture": "https://cdn.discordapp.com/avatars/297618066047631360/2630ebd15e52be4b7d4e951549722510?size=1024",
+        "role": "Developer",
+        "url": "https://github.com/Gerrygames"
+      },
+      {
+        "name": "creeper123123321",
+        "profile_picture": "https://cdn.discordapp.com/avatars/273102711379984385/477f28deedb653af86ad806aa9d22dc8?size=1024",
+        "role": "Developer",
+        "url": "https://github.com/creeper123123321"
+      }
+    ]
+  },
+  "moderators": {
+    "description": "Moderators help manage the community, enforce rules, and maintain a positive environment.",
+    "members": [
+      {
+        "name": "Kichura",
+        "profile_picture": "https://cdn.discordapp.com/avatars/647547125030453281/8a40de974b4ec2d162500d0a39bac323?size=1024",
+        "role": "Moderator",
+        "url": "https://github.com/Kichura"
+      },
+      {
+        "name": "Jo0001",
+        "profile_picture": "https://cdn.discordapp.com/avatars/522068432989192196/9ca42fcb329e6be4988dff4c453dade3?size=1024",
+        "role": "Moderator",
+        "url": "https://github.com/Jo0001"
+      },
+      {
+        "name": "krusic22",
+        "profile_picture": "https://cdn.discordapp.com/avatars/219443401974611970/b7f8cf3c5a70285543a384684ba89400?size=1024",
+        "role": "Moderator",
+        "url": "https://github.com/krusic22"
+      }
+    ]
+  },
+  "triage": {
+    "description": "Triage members help in prioritizing issues, managing the workflow, and assisting with support.",
+    "members": [
+      {
+        "name": "Camotoy",
+        "profile_picture": "https://cdn.discordapp.com/avatars/245958554899578880/eeffb72b60f7bd2e4c56cd21edf38132?size=1024",
+        "role": "Triage",
+        "url": "https://github.com/Camotoy"
+      }
+    ]
+  },
+  "former_collaborators": {
+    "description": "Former collaborators who have contributed significantly in the past.",
+    "members": [
+      {
+        "name": "Mats",
+        "profile_picture": "https://cdn.discordapp.com/avatars/244780978889949184/0fd4871a1df318eae08d539703d5d535?size=1024",
+        "role": "Admin",
+        "url": "https://github.com/Matsv"
+      },
+      {
+        "name": "electroniccat",
+        "profile_picture": "https://cdn.discordapp.com/avatars/126975485493248000/7a6f2ae55447489ae740fe49edaed642?size=1024",
+        "role": "Moderator",
+        "url": "https://github.com/electronicboy"
+      },
+      {
+        "name": "_tomcraft",
+        "profile_picture": "https://cdn.discordapp.com/avatars/309757619579387906/4099df4a68671254b0268e5139947dab?size=1024",
+        "role": "Moderator",
+        "url": "https://github.com/tomcraft"
+      },
+      {
+        "name": "Foorcee",
+        "profile_picture": "https://cdn.discordapp.com/avatars/159386240192348160/761e30e2b59dd9637e6d57139c968dae?size=1024",
+        "role": "Developer",
+        "url": "https://github.com/Foorcee"
+      },
+      {
+        "name": "Pokechu22",
+        "profile_picture": "https://cdn.discordapp.com/avatars/196728176918003714/356372120e32a863fa7e9614e6826611?size=1024",
+        "role": "Collaborator",
+        "url": "https://github.com/Pokechu22"
+      },
+      {
+        "name": "inventivetalent",
+        "profile_picture": "https://cdn.discordapp.com/avatars/154682100862287873/b3755cc81fa8aa9191590d5f77d77069?size=1024",
+        "role": "Collaborator",
+        "url": "https://github.com/InventivetalentDev"
+      },
+      {
+        "name": "Logics4",
+        "profile_picture": "https://cdn.discordapp.com/avatars/294565307974942720/f4e5e7709045006bb4b1771e75bf5dfc?size=1024",
+        "role": "Moderator"
+      },
+      {
+        "name": "Burninghellfire",
+        "profile_picture": "https://cdn.discordapp.com/avatars/271020209312235521/2684a0a129ebe36f21eeb349a004a87d?size=1024",
+        "role": "Moderator"
+      }
+    ]
+  }
+}

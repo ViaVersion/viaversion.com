@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team | ViaVersion Project</title>
+    <link rel="icon" type="image/png" sizes="128x128" href="../images/128.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #2e2e2e;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .navbar .logo img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .navbar .logo h1 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .navbar .categories {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .categories a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .navbar .categories a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar .social-icons {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar .social-icons a {
+            color: #ffffff;
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .heading-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .heading-section h2 {
+            font-size: 2em;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .heading-section p {
+            font-size: 1.1em;
+            color: #aaaaaa;
+            margin: 10px 0 0;
+        }
+
+        .role-section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #aaaaaa;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-item {
+            background-color: #2e2e2e;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            position: relative; 
+            transition: transform 0.3s ease; 
+            cursor: pointer; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05); 
+        }
+
+        .icon-container {
+            display: flex;
+            justify-content: center; 
+            gap: 10px;
+            position: absolute;
+            bottom: 10px; 
+            left: 50%;
+            transform: translateX(-50%); 
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .grid-item:hover .icon-container {
+            opacity: 1;
+        }
+
+        .icon-container a {
+            color: #ffffff;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .icon-container a:hover {
+            color: #00ccff; 
+        }
+
+        .icon-container .discord-icon:hover .tooltip {
+            display: block;
+        }
+
+        .grid-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .admin {
+            color: #f28b82;
+        }
+
+        .core-developer {
+            color: #a78bfa;
+        }
+
+        .developer {
+            color: #f4b400;
+        }
+
+        .moderator {
+            color: #f77c00;
+        }
+
+        .triage {
+            color: #f4b400;
+        }
+
+        .former-collaborator {
+            color: #888888;
+            font-style: italic;
+        }
+
+        
+        footer {
+            background-color: #2e2e2e;
+            color: #ffffff;
+            padding: 20px;
+            font-size: 14px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .footer-category {
+            flex: 1;
+            min-width: 150px;
+            margin: 0 20px;
+            text-align: center;
+        }
+
+        .footer-category h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #00ccff;
+        }
+
+        .footer-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-category ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-category ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer-category ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-bottom p {
+            margin: 5px 0;
+        }
+
+        .spacer {
+            height: 20px; 
+            width: 100%;
+        }
+
+        .content-responsibility {
+            font-size: 12px;
+            color: #555; 
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">
+        <img src="https://hangarcdn.papermc.io/avatars/user/759a1cce-652c-481d-8810-ad32d74f246b.webp?v=5"
+             alt="ViaVersion Logo">
+        <h1>ViaVersion</h1>
+    </div>
+    <div class="categories">
+        <a href="https://viaversion.com/">Home</a>
+        <a href="team/">Team</a>
+        <a href="https://hangar.papermc.io/ViaVersion" target="_blank">Hangar</a>
+        <a href="https://modrinth.com/organization/viaversion" target="_blank">Modrinth</a>
+    </div>
+    <div class="social-icons">
+        <a href="https://github.com/ViaVersion" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://viaversion.com/discord" target="_blank"><i class="fab fa-discord"></i></a>
+    </div>
+</div>
+
+<div class="container">
+    <!-- New Heading and Description Section -->
+    <div class="heading-section">
+        <h2>Meet the ViaVersion Team</h2>
+        <p>We’re the team behind ViaVersion, working hard to keep everything running smoothly and make sure your server supports all the Minecraft versions you want. Our projects have been downloaded millions of times, thanks to our awesome community!</p>
+    </div>
+
+    <!-- Staff members will be dynamically inserted here -->
+    <div id="staff-container"></div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-category">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="https://jd.viaversion.com/" target="_blank">Javadocs</a></li>
+                <li><a href="https://repo.viaversion.com/" target="_blank">Repository Server</a></li>
+                <li><a href="https://ci.viaversion.com/" target="_blank">Jenkins Server</a></li>
+            </ul>
+        </div>
+        <div class="footer-category">
+            <h3>Community</h3>
+            <ul>
+                <li><a href="https://discord.gg/via" target="_blank">Discord</a></li>
+                <li><a href="https://github.com/ViaVersion" target="_blank">GitHub</a></li>
+                <li><a href="https://hangar.papermc.io/ViaVersion" target="_blank">Hangar</a></li>
+                <li><a href="https://modrinth.com/organization/viaversion" target="_blank">Modrinth</a></li>
+            </ul>
+        </div>
+        <div class="footer-category">
+            <h3>Organisation</h3>
+            <ul>
+                <li><a href="team/">Our Team</a></li>
+                <li><a href="https://github.com/ViaVersion/ViaVersion/pulls" target="_blank">Contribute</a></li>
+                <li><a href="https://viaversion.com/donate" target="_blank">Donate</a></li>
+                <li><a href="https://github.com/ViaVersionAddons" target="_blank">ViaVersion Addons</a></li>
+            </ul>
+        </div>
+        <div class="footer-category">
+            <h3>Miscellaneous</h3>
+            <ul>
+                <li><a href="https://viaversion.com/setup">ViaSetup</a></li>
+                <li><a href="https://mclo.gs/" target="_blank">Upload server logs</a></li>
+                <li><a href="https://docs.viaversion.com/display/VIAVERSION/" target="_blank">Documentation</a></li>
+                <li><a href="https://github.com/ViaVersion/ViaVersion/tree/master?tab=readme-ov-file#license" target="_blank">Licensing</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="spacer" style="margin-top: 20px;"></div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2016-2024 The ViaVersion Team.</p>
+    </div>
+
+    <p class="content-responsibility">
+        Responsible for content: florian.michael07@gmail.com
+    </p>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('https://raw.githubusercontent.com/ViaVersion/viaversion.com/main/data/staff.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('staff-container');
+                const roles = {
+                    admins: 'Admin',
+                    core_developers: 'Core Developer',
+                    developers: 'Developer',
+                    moderators: 'Moderator',
+                    triage: 'Triage',
+                    former_collaborators: 'Former Collaborator'
+                };
+
+                for (const [roleKey, roleName] of Object.entries(roles)) {
+                    if (data[roleKey] && data[roleKey].members.length > 0) {
+                        const section = document.createElement('div');
+                        section.classList.add('role-section');
+
+                        const title = document.createElement('h2');
+                        title.classList.add(roleKey === 'admins' ? 'admin' :
+                            roleKey === 'core_developers' ? 'core-developer' :
+                                roleKey === 'developers' ? 'developer' :
+                                    roleKey === 'moderators' ? 'moderator' :
+                                        roleKey === 'triage' ? 'triage' :
+                                            'former-collaborator');
+                        title.textContent = roleName;
+                        section.appendChild(title);
+
+                        const description = document.createElement('p');
+                        description.classList.add('description');
+                        description.textContent = data[roleKey].description;
+                        section.appendChild(description);
+
+                        const gridContainer = document.createElement('div');
+                        gridContainer.classList.add('grid-container');
+
+                        data[roleKey].members.forEach(member => {
+                            const gridItem = document.createElement('div');
+                            gridItem.classList.add('grid-item');
+
+                            // Profile Picture
+                            const img = document.createElement('img');
+                            img.src = member.profile_picture; // No fallback image
+                            img.alt = `${member.name} Profile Picture`;
+                            gridItem.appendChild(img);
+
+                            // Name and Role
+                            const name = document.createElement('p');
+                            name.textContent = member.name;
+
+                            // Add role next to name only if it does not match the section title
+                            if (roleName !== member.role) {
+                                const roleSpan = document.createElement('span');
+                                roleSpan.className = roleKey === 'former_collaborators' ? 'former-collaborator' : '';
+                                roleSpan.textContent = ` - ${member.role}`;
+                                name.appendChild(roleSpan);
+                            }
+
+                            gridItem.appendChild(name);
+
+                            // URL Handling
+                            if (member.url) {
+                                gridItem.addEventListener('click', () => {
+                                    window.open(member.url, '_blank');
+                                });
+                                gridItem.style.cursor = 'pointer'; // Change cursor to pointer to indicate clickable
+                            }
+
+                            gridContainer.appendChild(gridItem);
+                        });
+
+                        section.appendChild(gridContainer);
+                        container.appendChild(section);
+                    }
+                }
+            })
+            .catch(error => console.error('Error loading staff data:', error));
+    });
+</script>
+</body>
+</html>

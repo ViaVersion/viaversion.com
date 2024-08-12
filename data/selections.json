@@ -1,0 +1,49 @@
+{
+  "question": "How/Where do you want to use ViaVersion?",
+  "answers": {
+    "On my Paper, Spigot, or Velocity server": {
+      "question": "What Minecraft versions do you want to support?",
+      "multi-answers": {
+        "Newer versions than my server version, (e.g. 1.15.2 on 1.15 server)": "ViaVersion",
+        "Older versions than my server version (e.g. 1.14.4 on 1.15 server)": ["ViaVersion", "ViaBackwards"],
+        "1.7 and 1.8 versions on 1.9+ servers": ["ViaVersion", "ViaBackwards", "ViaRewind"],
+        "Notable snapshot versions (3D Shareware, Combat Test 8c)": ["ViaVersion", "ViaBackwards", "ViaAprilFools"]
+      }
+    },
+    "On my Sponge, BungeeCord, or Waterfall server": {
+      "question": "Sponge or BungeeCord?",
+      "answers": {
+        "Sponge v8+": "ViaSponge",
+        "BungeeCord/Waterfall": "ViaBungee"
+      }
+    },
+    "On my Fabric/Forge client or server": {
+      "question": "Fabric or Forge?",
+      "answers": {
+        "Fabric": {
+          "question": "What Minecraft version are you using?",
+          "answers": {
+            "1.8": "ViaFabric",
+            "1.12": "ViaFabric",
+            "1.14": "ViaFabric",
+            "1.15": "ViaFabric",
+            "1.16": "ViaFabric",
+            "1.17": "ViaFabric",
+            "1.18": "ViaFabric",
+            "1.19": "ViaFabric",
+            "1.20": "ViaFabric",
+            "1.21": "ViaFabricPlus"
+          }
+        },
+        "Forge": "ViaForge"
+      }
+    },
+    "I am a plugin or software developer and looking for help": {
+      "question": "What do you need help with?",
+      "answers": {
+        "I am looking for API documentation": "https://docs.viaversion.com/display/VIAVERSION/",
+        "I want to integrate ViaVersion projects in my own project": "https://github.com/ViaVersion/ViaLoader"
+      }
+    }
+  }
+}
