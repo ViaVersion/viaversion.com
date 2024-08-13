@@ -234,7 +234,7 @@
 
 .collapsible.collapsed::before {
     content: '\f077';
-    transform: rotate(180deg);
+    transform: rotate(90deg);
 }
 
 .collapsible-content {
