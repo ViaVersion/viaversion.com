@@ -11,7 +11,9 @@
           "details": {
             "installedOn": "Minecraft Server (1.8.8-latest)",
             "allows": "All client versions that are newer than your server",
-            "additionalBenefits": "Less gameplay and anti-cheat issues if run on a Paper server",
+            "additionalBenefits": "Less gameplay and anti-cheat issues if run on a Paper server"
+          },
+          "links": {
             "gettingStarted": "https://docs.viaversion.com/display/VIAVERSION/",
             "javadocs": "https://jd.viaversion.com/",
             "apiDevelopers": "https://viaversion.atlassian.net/wiki/spaces/VIAVERSION/pages/54067250/Basic+API+usage"
@@ -23,10 +25,12 @@
           "url": "https://hangar.papermc.io/ViaVersion/ViaBackwards/versions",
           "image": "images/viabackwards.png",
           "details": {
+            "requires": "ViaVersion",
             "installedOn": "Minecraft Server (1.10-latest)",
-            "allows": "Client versions that are older than your server down to 1.9",
-            "wiki": "https://github.com/ViaVersion/ViaBackwards/wiki",
-            "requires": "ViaVersion"
+            "allows": "Client versions that are older than your server down to 1.9"
+          },
+          "links": {
+            "wiki": "https://github.com/ViaVersion/ViaBackwards/wiki"
           }
         },
         {
@@ -35,10 +39,10 @@
           "url": "https://hangar.papermc.io/ViaVersion/ViaRewind",
           "image": "images/viarewind.png",
           "details": {
+            "requires": "ViaVersion and ViaBackwards",
             "installedOn": "Minecraft Server (1.8.8-latest)",
             "allows": "1.7.10-1.8.9 clients",
-            "additionalBenefits": "Less gameplay issues if using ViaRewind Legacy Support",
-            "requires": "ViaVersion and ViaBackwards"
+            "additionalBenefits": "Less gameplay issues if using ViaRewind Legacy Support"
           }
         }
       ]
@@ -54,7 +58,9 @@
           "details": {
             "installedOn": "Fabric client or server (Latest minor version of 1.8, 1.14-latest)",
             "allows": "Connecting to 1.8.8-latest servers",
-            "additionalBenefits": "Less potential for mod incompatibilities than ViaFabricPlus",
+            "additionalBenefits": "Less potential for mod incompatibilities than ViaFabricPlus"
+          },
+          "links": {
             "gettingStarted": "https://github.com/ViaVersion/ViaFabric?tab=readme-ov-file#client-side-and-server-side-viaversion-implementation-for-fabric"
           }
         },
@@ -66,7 +72,9 @@
           "details": {
             "installedOn": "Fabric client (Latest)",
             "allows": "Connecting to classic c0.0.15 to the latest release servers",
-            "additionalBenefits": "Less gameplay and anti-cheat issues",
+            "additionalBenefits": "Less gameplay and anti-cheat issues"
+          },
+          "links": {
             "gettingStarted": "https://github.com/ViaVersion/ViaFabricPlus/blob/main/docs/USAGE.md",
             "apiDevelopers": "https://github.com/ViaVersion/ViaFabricPlus/blob/main/docs/DEVELOPER_API.md"
           }
@@ -106,7 +114,9 @@
           "details": {
             "installedOn": "Local instances to any server, or remote instances to a specific server",
             "allows": "Connecting to classic c0.0.15-latest servers",
-            "additionalBenefits": "User-friendly graphical user interface for local instances",
+            "additionalBenefits": "User-friendly graphical user interface for local instances"
+          },
+          "links": {
             "gettingStarted": "https://github.com/ViaVersion/ViaProxy?tab=readme-ov-file#usage-for-players-gui",
             "apiDevelopers": "https://github.com/ViaVersion/ViaProxy?tab=readme-ov-file#developer-plugin-api"
           }
@@ -122,8 +132,8 @@
           "url": "https://hangar.papermc.io/ViaVersion/ViaBungee/versions",
           "image": "images/viabungee.png",
           "details": {
-            "installedOn": "BungeeCord or Waterfall proxy",
-            "requires": "ViaVersion"
+            "requires": "ViaVersion",
+            "installedOn": "BungeeCord or Waterfall proxy"
           }
         },
         {
@@ -132,8 +142,8 @@
           "url": "https://modrinth.com/plugin/viasponge/versions",
           "image": "images/viasponge.png",
           "details": {
-            "installedOn": "Sponge v8+",
-            "requires": "ViaVersion"
+            "requires": "ViaVersion",
+            "installedOn": "Sponge v8+"
           }
         },
         {

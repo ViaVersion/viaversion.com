@@ -153,7 +153,7 @@ function createProjectCard(project) {
             <div class="collapsible-content ${'show'}">
                 <div class="project-container">
                     ${project.items.map(item => `
-                        <div class="project-card" data-name="${item.name}" data-url="${item.url}" data-image="${item.image}" data-description="${item.description}" data-details='${JSON.stringify(item.details)}'>
+                        <div class="project-card" data-name="${item.name}" data-url="${item.url}" data-image="${item.image}" data-description="${item.description}" data-details='${JSON.stringify(item.details)}' data-links='${JSON.stringify(item.links)}'>
                             <img src="${item.image}" alt="${item.name} Logo">
                             <div class="project-name">${item.name}</div>
                         </div>
@@ -184,25 +184,32 @@ function setupProjectCards(projects) {
             const url = card.getAttribute('data-url');
             const image = card.getAttribute('data-image');
             const description = card.getAttribute('data-description');
-            const details = JSON.parse(card.getAttribute('data-details'));
+            let details = card.getAttribute('data-details');
+            let links = card.getAttribute('data-links');
             const popup = document.getElementById('popup');
             const popupBody = document.getElementById('popup-body');
 
             let additionalButtons = '';
             let requiresText = '';
 
+            if (details !== "undefined") {
+                details = JSON.parse(details);
+            }
+            if (links !== "undefined") {
+                links = JSON.parse(links);
+            }
             // Check for existence and non-empty value of each button
-            if (details.gettingStarted && details.gettingStarted.trim()) {
-                additionalButtons += `<a href="${details.gettingStarted}" class="btn-popup btn-getting-started" target="_blank"><i class="fas fa-play-circle"></i> Getting Started</a>`;
+            if (links.gettingStarted && links.gettingStarted.trim()) {
+                additionalButtons += `<a href="${links.gettingStarted}" class="btn-popup btn-getting-started" target="_blank"><i class="fas fa-play-circle"></i> Getting Started</a>`;
             }
-            if (details.javadocs && details.javadocs.trim()) {
-                additionalButtons += `<a href="${details.javadocs}" class="btn-popup btn-javadocs" target="_blank"><i class="fas fa-book"></i> Javadocs</a>`;
+            if (links.javadocs && links.javadocs.trim()) {
+                additionalButtons += `<a href="${links.javadocs}" class="btn-popup btn-javadocs" target="_blank"><i class="fas fa-book"></i> Javadocs</a>`;
             }
-            if (details.apiDevelopers && details.apiDevelopers.trim()) {
-                additionalButtons += `<a href="${details.apiDevelopers}" class="btn-popup btn-api-developers" target="_blank"><i class="fas fa-code"></i> API for Developers</a>`;
+            if (links.apiDevelopers && links.apiDevelopers.trim()) {
+                additionalButtons += `<a href="${links.apiDevelopers}" class="btn-popup btn-api-developers" target="_blank"><i class="fas fa-code"></i> API for Developers</a>`;
             }
-            if (details.wiki && details.wiki.trim()) {
-                additionalButtons += `<a href="${details.wiki}" class="btn-popup btn-wiki" target="_blank"><i class="fas fa-book"></i> Wiki</a>`;
+            if (links.wiki && links.wiki.trim()) {
+                additionalButtons += `<a href="${links.wiki}" class="btn-popup btn-wiki" target="_blank"><i class="fas fa-book"></i> Wiki</a>`;
             }
 
             // Add Requires field if present
