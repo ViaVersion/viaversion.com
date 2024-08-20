@@ -3,28 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home | ViaVersion Project</title>
-    <link rel="preconnect" href="https://api.github.com"/>
+    <title>Team | ViaVersion Project</title>
     <link rel="preconnect" href="https://avatars.githubusercontent.com"/>
+    <link rel="preconnect" href="https://cdn.discordapp.com"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous" async></script>
+            crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" sizes="128x128" href="images/viaversion.png">
-    <meta property="og:type" content="website"/>
-    <meta property="og:image" content="images/128.png">
-    <meta property="og:url" content="https://viaversion.com/"/>
-    <meta property="og:site_name" content="Home | ViaVersion Project"/>
-    <meta property="og:title" content="Home | ViaVersion Project"/>
-    <meta property="og:description"
-          content="Overview of all ViaVersion software from the classic plugins to mods and even standalone apps - get all the information you need"/>
     <meta name="description"
-          content="Overview of all ViaVersion software from the classic plugins to mods and even standalone apps - get all the information you need">
-    <meta name="keywords"
-          content="minecraft, java, protocol, packet, java-edition, plugin, protocol translator, translator, minecraft server, viaversion, viabackwards, viarewind, viaversion overview, viafabric, viaforge, viafabricplus, mod, paper, velocity, waterfall, bungeecord, spigot, block-version, block-protocols, proxy, cross-version, viabungee, sponge">
+          content="Meet the team behind ViaVersion. Myles, kennty, ...">
     <style>
         body {
             background-color: #1e1e1e;
@@ -55,12 +45,12 @@
             max-width: 650px;
         }
 
-        .project {
+        .card {
             width: 12em;
         }
 
         .card:hover {
-            background-color:  #0cf !important;
+            background-color: #0cf !important;
         }
 
         .btn:hover, .bi:hover {
@@ -68,12 +58,8 @@
         }
 
         @media only screen and (max-width: 700px) {
-            .project {
+            .card {
                 width: 5em;
-            }
-
-            #popup {
-                font-size: 16px;
             }
 
             body {
@@ -95,13 +81,38 @@
         .footer-link:hover {
             text-decoration: underline;
         }
+
+        .admin {
+            color: #f28b82
+        }
+
+        .core-developer {
+            color: #a78bfa
+        }
+
+        .developer {
+            color: #f4b400
+        }
+
+        .moderator {
+            color: #f77c00
+        }
+
+        .triage {
+            color: #f4b400
+        }
+
+        .former-collaborator {
+            color: #888;
+            font-style: italic
+        }
     </style>
 </head>
-<body class="text-white">
+<body>
 <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img
+            <a class="navbar-brand" href="index.html"><img
                     src="images/logotext-small.png"
                     alt="Via logo" height="32"> ViaVersion</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -110,8 +121,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="team.html">Team</a>
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#">Team</a>
                     <a class="nav-link" href="https://hangar.papermc.io/ViaVersion" target="_blank">Hangar</a>
                     <a class="nav-link" href="https://modrinth.com/organization/viaversion" target="_blank">Modrinth</a>
                 </div>
@@ -127,52 +138,16 @@
 </header>
 <div class="container">
     <div class="row p-4 fs-6 rounded cardcontainer text-center bg-content mt-3">
-        <h2>Why Lose Players After a Minecraft Update?</h2>
-        <p>Our projects allow you to connect with various Minecraft versions, we support all common platforms and our
-            own standalone proxy to join from basically any client version
-            on any server version from the past decade. We were founded in 2016 by FormallyMyles and over the last 8
-            years the project is driven by a team of developers.</p>
-        <a href="#" class="text-white" id="setup-guide-text" onclick="openSetupGuide()"><b>Don't know where to
-            start? Click here to open the installation guide</b></a>
+        <h2>Meet the ViaVersion Team</h2>
+        <p>We’re the team behind ViaVersion, working hard to keep everything running smoothly and make sure your server
+            supports all the Minecraft versions you want. Our projects have been downloaded millions of times, thanks to
+            our awesome community!</p>
     </div>
 
-    <div id="setupModal" class="modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Quick Start</h5>
-                </div>
-                <div class="modal-body">
-                    <form id="formContent"></form>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="staff-container"></div>
 
-    <div class="modal" id="popup">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body" id="popup-body"></div>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <div class="row my-3 p-3 cardcontainer rounded" id="projects-overview"></div>
-    </div>
-
-    <div>
-        <h2 class="text-center">Contributing to ViaVersion</h2>
-        <p class="text-center">We appreciate your support! For contributions, check out our GitHub page.</p>
-        <div class="row my-3 p-3 cardcontainer rounded" id="contributor-grid"></div>
-        <div class="text-center">
-            <p>We are always looking for new contributors to help with our projects. You can
-                contribute by:</p>
-            <a href="https://github.com/ViaVersion/ViaVersion/pulls" target="_blank" class="btn btn-info">Opening a Pull
-                Request</a>
-            <a href="https://viaversion.com/donate" target="_blank" class="btn btn-warning">Donating</a></div>
-    </div>
 </div>
+
 <footer>
     <div class="mt-5 pt-5 pb-3 bg-content" style="overflow: hidden;">
         <div class="row align-items-start text-center">
@@ -208,5 +183,6 @@
         <div class="text-center m-3">© 2016-2024 The ViaVersion Team.</div>
     </div>
 </footer>
+<script src="team.js"></script>
 </body>
 </html>
