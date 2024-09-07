@@ -230,15 +230,19 @@ function setupContributors(contributors) {
         `).join('');
 }
 
+const fetchProjects = fetchJson("projects");
+const fetchSelections = fetchJson("selections");
+const fetchContributors_ = fetchContributors();
+
 document.addEventListener('DOMContentLoaded', () => {
-    fetchJson("projects").then(data => {
+    fetchProjects.then(data => {
         setupProjectCards(data);
     });
-    fetchContributors().then(data => {
-        setupContributors(data);
-    });
-    fetchJson("selections").then(data => {
+    fetchSelections.then(data => {
         questions = data
+    });
+    fetchContributors_.then(data => {
+        setupContributors(data);
     });
     window.addEventListener('click', (event) => {
         const popup = document.getElementById('popup');

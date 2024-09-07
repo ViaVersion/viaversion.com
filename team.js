@@ -1,6 +1,6 @@
+const fetchStaff = fetch('data/staff.json');
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('data/staff.json')
-        .then(response => response.json())
+    fetchStaff.then(response => response.json())
         .then(data => {
             const container = document.getElementById('staff-container');
             const roles = {
