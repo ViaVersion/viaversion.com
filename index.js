@@ -147,7 +147,7 @@ function createProjectCard(project) {
             <div class="row cardcontainer rounded justify-content-center">           
                     ${project.items.map(item => `                     
                         <div class="card ms-3 mt-2 p-2 bg-content project" data-name="${item.name}" data-url="${item.url}" data-image="${item.image}" data-description="${item.description}" data-details='${JSON.stringify(item.details)}' data-links='${JSON.stringify(item.links)}'>
-                <img src="${item.image}" class="card-img-top" alt="${item.name} Logo" loading="lazy">
+                <img src="${item.image}" class="card-img-top card-img-large" alt="${item.name} Logo" loading="lazy">
                 <div class="card-body">
                     <h5 class="card-title text-center">${item.name}</h5>
                 </div>

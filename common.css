@@ -23,6 +23,10 @@ h1, h2 .fs-2, h3, h4, summary {
     background-color: #0cf !important;
 }
 
+.card-img-large {
+    min-height: 174px;
+}
+
 .btn:hover, .bi:hover {
     filter: brightness(0.5);
 }
@@ -30,6 +34,10 @@ h1, h2 .fs-2, h3, h4, summary {
 @media only screen and (max-width: 995px) {
     .btn-group {
         display: unset;
+    }
+
+    .card-img-large {
+        min-height: 97px;
     }
 }
 

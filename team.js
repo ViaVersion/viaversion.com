@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         img.src = member.profile_picture;
                         img.alt = member.name;
                         img.loading = "lazy";
-                        img.className = "card-img-top rounded-circle";
+                        img.className = "card-img-top card-img-large rounded-circle";
 
                         const divBody = document.createElement('div');
                         divBody.className = "card-body";
