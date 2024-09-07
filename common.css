@@ -1,0 +1,43 @@
+body {
+    background-color: #1e1e1e !important;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2 .fs-2, h3, h4, summary {
+    color: #0cf !important;
+}
+
+.bg-content {
+    background-color: #2e2e2e;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.card {
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: #0cf !important;
+}
+
+.btn:hover, .bi:hover {
+    filter: brightness(0.5);
+}
+
+@media only screen and (max-width: 995px) {
+    .btn-group {
+        display: unset;
+    }
+}
+
+.footer-link {
+    color: white !important;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
