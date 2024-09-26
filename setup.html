@@ -269,7 +269,7 @@
     <select id="proxy" onchange="getPlugins()">
         <option id="pNo" value="none">No</option>
         <option value="velocity">Velocity</option>
-        <option value="bungeecord">BungeeCord</option>
+        <option value="bungeecord">BungeeCord/Waterfall</option>
         <option value="sponge">Sponge</option>
         <option value="other" id="pOther">Other</option>
     </select>
@@ -303,6 +303,10 @@
                         class="ctooltiptext">Paper, Spigot, ...</span></span>
                 (recommend
                 setup)
+            </li>
+            <li id="viabungee" class="li_info" style="display: none">
+                Put <code>ViaBungee</code> into your Bungeecord/Waterfall plugins folder and put ViaVersion (and its
+                addons) in <code>/plugins/ViaVersion/</code>
             </li>
         </ul>
     </div>
@@ -451,6 +455,7 @@
             document.getElementById("warn").innerHTML = "Bitte w&auml;hle eine weitere Version aus!";
             document.getElementById("note").innerHTML = "Stelle sicher, dass du Via* nur auf dem <span class=\"ctooltip help\">Proxy<span class=\"ctooltiptext\">BungeeCord, Velocity, ...</span></span> ODER auf allen <span class=\"ctooltip help\">backend Servern<span class=\"ctooltiptext\">Paper, Spigot, ...</span></span> installierst (empfohlenes Setup)";
             document.getElementById("velocity").innerHTML = "Du brauchst <a href=\"https://velocitypowered.com/\" target=\"_blank\" rel=\"noopener\">Velocity</a> als Proxy f&uuml;r 1.7 Support";
+            document.getElementById("viabungee").innerHTML = " Kopiere <code>ViaBungee</code> in den Bungee/Waterfall plugin Ordner und kopiere ViaVersion (und die Erweiterungen) nach <code>/plugins/ViaVersion/</code>";
             blockMessage = "F&uuml;ge folgende Nummern in der ViaVersion <code>config.yml</code> unter <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Klicke zum kopieren</span>[$output]</b></code> ein";
             toggleMessage = ["Alle w&auml;hlen", "Alle abw&auml;hlen"];
         },
@@ -525,6 +530,11 @@
             document.getElementById("velocity").style.display = "list-item";
         } else {
             document.getElementById("velocity").style.display = "none";
+        }
+        if (proxyType === "bungeecord") {
+            document.getElementById("viabungee").style.display = "list-item";
+        } else {
+            document.getElementById("viabungee").style.display = "none";
         }
 
         function generateBlockList() {
