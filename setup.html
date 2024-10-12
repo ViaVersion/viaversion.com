@@ -456,7 +456,7 @@
             document.getElementById("note").innerHTML = "Stelle sicher, dass du Via* nur auf dem <span class=\"ctooltip help\">Proxy<span class=\"ctooltiptext\">BungeeCord, Velocity, ...</span></span> ODER auf allen <span class=\"ctooltip help\">backend Servern<span class=\"ctooltiptext\">Paper, Spigot, ...</span></span> installierst (empfohlenes Setup)";
             document.getElementById("velocity").innerHTML = "Du brauchst <a href=\"https://velocitypowered.com/\" target=\"_blank\" rel=\"noopener\">Velocity</a> als Proxy f&uuml;r 1.7 Support";
             document.getElementById("viabungee").innerHTML = " Kopiere <code>ViaBungee</code> in den Bungee/Waterfall plugin Ordner und kopiere ViaVersion (und die Erweiterungen) nach <code>/plugins/ViaVersion/</code>";
-            blockMessage = "F&uuml;ge folgende Nummern in der ViaVersion <code>config.yml</code> unter <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Klicke zum kopieren</span>[$output]</b></code> ein";
+            blockMessage = "F&uuml;ge folgende Nummern in der ViaVersion <code>$path</code> unter <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Klicke zum kopieren</span>[$output]</b></code> ein";
             toggleMessage = ["Alle w&auml;hlen", "Alle abw&auml;hlen"];
         },
         "pt": () => {
@@ -466,7 +466,7 @@
             document.getElementById("out_text").innerHTML = "Você precisa de";
             document.getElementById("warn").innerHTML = "Selecione uma versão adicional!";
             document.getElementById("note").innerHTML = "Tenha certeza de que os plugins Via* estão somente no proxy ou nos servidores backend (configuração recomendada)";
-            blockMessage = "Insira estes números na <code>config.yml</code> do ViaVersion em <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Click to copy</span>[$output]</b></code>";//todo add translation
+            blockMessage = "Insira estes números na <code>$path</code> do ViaVersion em <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Click to copy</span>[$output]</b></code>";//todo add translation
             toggleMessage = ["Marcar tudo", "Desmarcar tudo"];
             document.getElementById("velocity").innerHTML = "Você precisará do <a href='https://velocitypowered.com/' target='_blank' rel='noopener'>Velocity</a> como proxy para aceitar a versão 1.7";
             document.getElementById("credits").innerHTML = "Feito com &hearts; por Jo0001";
@@ -478,14 +478,15 @@
             document.getElementById("out_text").innerHTML = "Vous avez besoin de";
             document.getElementById("warn").innerHTML = "Veuillez cocher au moins une version supplémentaire !";
             document.getElementById("note").innerHTML = "Assurez-vous d'installer Via* uniquement sur le <span class=\"ctooltip help\">proxy<span class=\"ctooltiptext\">BungeeCord, Velocity, ...</span></span> OU sur chacun de vos <span class=\"ctooltip help\">serveurs<span class=\"ctooltiptext\">Paper, Spigot, ...</span></span> (recommandé)";
-            blockMessage = "Collez ces nombres dans le fichier <code>config.yml</code> de ViaVersion à la ligne <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Clique pour copier</span>[$output]</b></code>";
+            blockMessage = "Collez ces nombres dans le fichier <code>$path</code> de ViaVersion à la ligne <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Clique pour copier</span>[$output]</b></code>";
             toggleMessage = ["Tout cocher", "Tout décocher"];
             document.getElementById("velocity").innerHTML = "Vous avez besoin de <a href='https://velocitypowered.com/' target='_blank' rel='noopener'>Velocity</a> comme proxy pour autoriser la version 1.7";
             document.getElementById("credits").innerHTML = "Fait avec &hearts; par Jo0001";
         }
     };
     let toggleMessage = ["Check all", "Uncheck all"];
-    let blockMessage = "Paste these numbers to the ViaVersion <code>config.yml</code> under <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Click to copy</span>[$output]</b></code>";
+    let blockMessage = "Paste these numbers to the ViaVersion <code>$path</code> under <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Click to copy</span>[$output]</b></code>";
+    let path = "/plugins/ViaVersion/config.yml";
 
     let langIds = Object.keys(langs);
     if (!langIds.includes(lang)) {
@@ -630,7 +631,7 @@
                 '"' + it + '"'
             );
 
-            document.getElementById("tip").innerHTML = blockMessage.replaceAll("$output", confString);
+            document.getElementById("tip").innerHTML = blockMessage.replaceAll("$output", confString).replaceAll("$path", path);
             document.getElementsByClassName("ctooltip")[0].addEventListener('click', function () {
                 copyToClipboard(confString)
             });
