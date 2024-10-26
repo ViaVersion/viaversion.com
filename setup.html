@@ -592,7 +592,9 @@
                 if (player_versions.includes(versions[0].protocol)) {
                     confArr = confArr.concat(lowerBound);
                 } else {
-                    confArr.push("<" + lowerBound[idx - 1]);
+                    let pI = versions.findIndex((version) => version.version === lowerBound[lowerBound.length - 1]);
+                    lowerBound.push(versions[pI + 1].version);
+                    confArr.push("<" + lowerBound[idx]);
                 }
 
                 confArr = confArr.concat(middle);
