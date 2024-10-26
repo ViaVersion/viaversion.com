@@ -603,7 +603,7 @@
                     confArr = confArr.concat(upperBound);
                 } else {
                     let op = convertToProtocol(upperBound[0]) < server_version ? "<" : ">";
-                    confArr.push(op + upperBound[0]);
+                    confArr.push(op + convertToVersion(player_versions.at(-1)));
                 }
 
 
