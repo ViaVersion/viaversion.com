@@ -1,6 +1,6 @@
 {
   "admins": {
-    "description": "Admins are Core Developers with added ownership permissions on platforms like GitHub or Modrinth.",
+    "description": "Admins are Core Developers with additional responsibilities, including ownership and administrative permissions on platforms such as GitHub and Modrinth.",
     "members": [
       {
         "name": "Myles",
@@ -17,7 +17,7 @@
     ]
   },
   "core_developers": {
-    "description": "Core Developers maintain most projects and contribute significant changes across all our projects.",
+    "description": "Core Developers are responsible for maintaining and improving core projects while contributing significant changes across all ongoing developments.",
     "members": [
       {
         "name": "EnZaXD",
@@ -28,7 +28,7 @@
     ]
   },
   "developers": {
-    "description": "Developers work on implementing features, fixing bugs, and writing code for our projects.",
+    "description": "Developers focus on implementing new features, fixing bugs, and writing code for various projects.",
     "members": [
       {
         "name": "RK_01",
@@ -51,7 +51,7 @@
     ]
   },
   "moderators": {
-    "description": "Moderators help manage the community, enforce rules, and maintain a positive environment.",
+    "description": "Moderators are responsible for managing the community, enforcing rules, and fostering a positive and environment.",
     "members": [
       {
         "name": "Jo0001",
@@ -74,7 +74,7 @@
     ]
   },
   "triage": {
-    "description": "Triage members help in prioritizing issues, managing the workflow, and assisting with support.",
+    "description": "Triage members support by prioritizing issues, managing workflows, and providing assistance with community support requests.",
     "members": [
       {
         "name": "Camotoy",
@@ -85,7 +85,7 @@
     ]
   },
   "former_collaborators": {
-    "description": "Former collaborators who have contributed significantly in the past.",
+    "description": "Former collaborators who have made significant contributions in the past.",
     "members": [
       {
         "name": "Mats",
