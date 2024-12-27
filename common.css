@@ -1,6 +1,9 @@
 body {
     background-color: #1e1e1e !important;
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 h1, h2 .fs-2, h3, h4, summary {
@@ -39,6 +42,11 @@ h1, h2 .fs-2, h3, h4, summary {
     .card-img-large {
         min-height: 97px;
     }
+}
+
+footer {
+    flex: 0 0 50px;
+    margin-top: auto;
 }
 
 .footer-link {
