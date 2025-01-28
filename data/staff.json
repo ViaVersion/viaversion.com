@@ -10,7 +10,7 @@
       },
       {
         "name": "kennytv",
-        "profile_picture": "https://cdn.discordapp.com/avatars/259465250716254210/fbeb64dddaa8b99ceca5f26966ef34e7?size=256",
+        "profile_picture": "https://cdn.discordapp.com/avatars/259465250716254210/8e408c9cdc9e3bff4141eaf69d15235d?size=256",
         "role": "Admin",
         "url": "https://kennytv.eu"
       }
@@ -125,8 +125,9 @@
       },
       {
         "name": "Logics4",
-        "profile_picture": "https://cdn.discordapp.com/avatars/294565307974942720/3aa27587f6a3e56a14f903adef7a7d93?size=256",
-        "role": "Moderator"
+        "profile_picture": "https://cdn.discordapp.com/avatars/294565307974942720/e3be4d326f3da2c0e9a26c8a65f9d322?size=256",
+        "role": "Moderator",
+        "url": "https://github.com/Logics4"
       },
       {
         "name": "Burninghellfire",
@@ -136,7 +137,8 @@
       {
         "name": "FivePB (Xer)",
         "profile_picture": "https://avatars.githubusercontent.com/u/10787350?v=4",
-        "role": "Moderator"
+        "role": "Moderator",
+        "url": "https://github.com/Xernium"
       }
     ]
   }
