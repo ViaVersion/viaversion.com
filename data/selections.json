@@ -41,7 +41,7 @@
     "I am a plugin or software developer and looking for help": {
       "question": "What do you need help with?",
       "answers": {
-        "I am looking for API documentation": "https://docs.viaversion.com/display/VIAVERSION/",
+        "I am looking for API documentation": "https://docs.viaversion.com/",
         "I want to integrate ViaVersion projects in my own project": "https://github.com/ViaVersion/ViaLoader"
       }
     }
