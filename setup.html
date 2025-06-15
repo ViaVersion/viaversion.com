@@ -199,9 +199,10 @@
     <label for="server_version" id="server_version_text">Select your server version</label>
     <select id="server_version" onchange="getPlugins()">
         <optgroup label="Latest">
-            <option value="770">🌿 1.21.5</option>
+            <option value="771">💬 1.21.6</option>
         </optgroup>
         <optgroup label="1.21.x">
+            <option value="770">1.21.5</option>
             <option value="769">1.21.4</option>
             <option value="768">1.21.2 & 1.21.3</option>
             <option value="767">1.21 & 1.21.1</option>
@@ -422,6 +423,9 @@
     }, {
         protocol: 770,
         version: "1.21.5"
+    }, {
+        protocol: 771,
+        version: "1.21.6"
     }
     ]);
 
@@ -477,7 +481,7 @@
             document.getElementById("note").innerHTML = "Stelle sicher, dass du Via* nur auf dem <span class=\"ctooltip help\">Proxy<span class=\"ctooltiptext\">BungeeCord, Velocity, ...</span></span> ODER auf allen <span class=\"ctooltip help\">backend Servern<span class=\"ctooltiptext\">Paper, Spigot, ...</span></span> installierst (empfohlenes Setup)";
             document.getElementById("velocity").innerHTML = "Du brauchst <a href=\"https://velocitypowered.com/\" target=\"_blank\" rel=\"noopener\">Velocity</a> als Proxy f&uuml;r 1.7 Support";
             document.getElementById("viabungee").innerHTML = " Kopiere <code>ViaBungee</code> in den Bungee/Waterfall plugin Ordner und kopiere ViaVersion (und die Erweiterungen) nach <code>/plugins/ViaVersion/</code>";
-            document.getElementById("java17").innerHTML =" ViaVersion (sowie die Erweiterungen) benötigen Java 17+ oder spezielle Builds, siehe <ahref=\"https://github.com/ViaVersion/ViaVersion/wiki/Java-Requirements\" target=\"_blank\">hier</a>"
+            document.getElementById("java17").innerHTML = " ViaVersion (sowie die Erweiterungen) benötigen Java 17+ oder spezielle Builds, siehe <ahref=\"https://github.com/ViaVersion/ViaVersion/wiki/Java-Requirements\" target=\"_blank\">hier</a>"
             blockMessage = "F&uuml;ge folgende Nummern in der ViaVersion <code>$path</code> unter <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Klicke zum kopieren</span>[$output]</b></code> ein";
             toggleMessage = ["Alle w&auml;hlen", "Alle abw&auml;hlen"];
         },
