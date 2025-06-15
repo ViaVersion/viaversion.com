@@ -316,6 +316,10 @@
                 Put <code>ViaBungee</code> into your Bungeecord/Waterfall plugins folder and put ViaVersion (and its
                 addons) in <code>/plugins/ViaVersion/</code>
             </li>
+            <li id="java17" class="li_info" style="display: none">
+                ViaVersion (and its addons) require java 17+ or special builds. See <a
+                    href="https://github.com/ViaVersion/ViaVersion/wiki/Java-Requirements" target="_blank">Docs</a>
+            </li>
         </ul>
     </div>
 </div>
@@ -473,6 +477,7 @@
             document.getElementById("note").innerHTML = "Stelle sicher, dass du Via* nur auf dem <span class=\"ctooltip help\">Proxy<span class=\"ctooltiptext\">BungeeCord, Velocity, ...</span></span> ODER auf allen <span class=\"ctooltip help\">backend Servern<span class=\"ctooltiptext\">Paper, Spigot, ...</span></span> installierst (empfohlenes Setup)";
             document.getElementById("velocity").innerHTML = "Du brauchst <a href=\"https://velocitypowered.com/\" target=\"_blank\" rel=\"noopener\">Velocity</a> als Proxy f&uuml;r 1.7 Support";
             document.getElementById("viabungee").innerHTML = " Kopiere <code>ViaBungee</code> in den Bungee/Waterfall plugin Ordner und kopiere ViaVersion (und die Erweiterungen) nach <code>/plugins/ViaVersion/</code>";
+            document.getElementById("java17").innerHTML =" ViaVersion (sowie die Erweiterungen) benötigen Java 17+ oder spezielle Builds, siehe <ahref=\"https://github.com/ViaVersion/ViaVersion/wiki/Java-Requirements\" target=\"_blank\">hier</a>"
             blockMessage = "F&uuml;ge folgende Nummern in der ViaVersion <code>$path</code> unter <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Klicke zum kopieren</span>[$output]</b></code> ein";
             toggleMessage = ["Alle w&auml;hlen", "Alle abw&auml;hlen"];
         },
@@ -553,6 +558,11 @@
             document.getElementById("viabungee").style.display = "list-item";
         } else {
             document.getElementById("viabungee").style.display = "none";
+        }
+        if (server_version < 757) {
+            document.getElementById("java17").style.display = "list-item";
+        } else {
+            document.getElementById("java17").style.display = "none";
         }
 
         function generateBlockList() {
