@@ -127,16 +127,6 @@
       "category": "Other Add-On projects",
       "items": [
         {
-          "name": "ViaBungee",
-          "description": "ViaVersion, (and optional ViaBackwards, ViaRewind, ViaAprilFools) loader for BungeeCord/Waterfall",
-          "url": "https://hangar.papermc.io/ViaVersion/ViaBungee/versions",
-          "image": "images/viabungee.png",
-          "details": {
-            "requires": "ViaVersion",
-            "installedOn": "BungeeCord or Waterfall proxy"
-          }
-        },
-        {
           "name": "ViaSponge",
           "description": "ViaVersion, (and optional ViaBackwards, ViaRewind, ViaAprilFools) loader for Sponge servers",
           "url": "https://modrinth.com/plugin/viasponge/versions",
