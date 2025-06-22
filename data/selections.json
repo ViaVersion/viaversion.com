@@ -14,7 +14,7 @@
       "question": "Sponge or BungeeCord?",
       "answers": {
         "Sponge v8+": "ViaSponge",
-        "BungeeCord/Waterfall": "ViaBungee"
+        "BungeeCord/Waterfall": "Bungee is not supported, install on Paper"
       }
     },
     "On my Fabric/Forge client or server": {
