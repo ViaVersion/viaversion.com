@@ -109,7 +109,7 @@
         {
           "name": "ViaProxy",
           "description": "Standalone proxy which allows players to join EVERY Minecraft server version (Classic, Alpha, Beta, Release, Bedrock)",
-          "url": "https://github.com/ViaVersion/ViaProxy/releases/tag/v3.3.3",
+          "url": "https://github.com/ViaVersion/ViaProxy/releases/latest",
           "image": "images/viaproxy.png",
           "details": {
             "installedOn": "Local instances to any server, or remote instances to a specific server",
