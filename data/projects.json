@@ -98,7 +98,7 @@
         {
           "name": "ViaAAS",
           "description": "ViaVersion as a Service - standalone ViaVersion proxy",
-          "url": "https://github.com/ViaVersion/VIAaaS/releases/tag/v0.4.19",
+          "url": "https://github.com/ViaVersion/VIAaaS/releases/latest",
           "image": "images/viaaas.webp",
           "details": {
             "installedOn": "Local or remote instances to any server",
