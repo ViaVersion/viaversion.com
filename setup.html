@@ -304,7 +304,7 @@
         <br>
         <ul id="info_container">
             <li id="tip" class="li_info" style="display: none"></li>
-            <li id="velocity" class="li_info" style="display: none">You need <a href="https://velocitypowered.com/"
+            <li id="velocity" class="li_info" style="display: none">You need <a href="https://papermc.io/downloads/velocity"
                                                                                 target="_blank"
                                                                                 rel="noopener">Velocity</a>
                 as proxy for 1.7 support
@@ -482,41 +482,41 @@
         },
         "de": () => {
             document.getElementById("server_version_text").innerHTML = "W&auml;hle deine Server Version";
-            document.getElementById("proxy_text").innerHTML = "M&ouml;chtest du Via* auf einem Proxy installieren (Bungee, Velocity,..)?";
+            document.getElementById("proxy_text").innerHTML = "M&ouml;chtest du Via* auf einem Proxy installieren (Velocity, Bungee,..)?";
             document.getElementById("pNo").innerHTML = "Nein";
             document.getElementById("pOther").innerHTML = "Anderer";
             document.getElementById("pBungee").innerHTML = "BungeeCord - nicht unterst&uuml;tzt";
-            document.getElementById("versions").innerHTML = "Klicke alle Versionen an, mit denen Spielern beitreten sollen";
+            document.getElementById("versions").innerHTML = "Klicke alle Versionen an, mit denen Spieler beitreten sollen";
             document.getElementById("out_text").innerHTML = "Du brauchst";
             document.getElementById("warn").innerHTML = "Bitte w&auml;hle eine weitere Version aus!";
-            document.getElementById("note").innerHTML = "Stelle sicher, dass du Via* nur auf dem <span class=\"ctooltip help\">Proxy<span class=\"ctooltiptext\">Velocity, ...</span></span> ODER auf allen <span class=\"ctooltip help\">backend Servern<span class=\"ctooltiptext\">Paper, Spigot, ...</span></span> installierst (empfohlenes Setup)";
-            document.getElementById("velocity").innerHTML = "Du brauchst <a href=\"https://velocitypowered.com/\" target=\"_blank\" rel=\"noopener\">Velocity</a> als Proxy f&uuml;r 1.7 Support";
+            document.getElementById("note").innerHTML = "Stelle sicher, dass du Via* nur auf dem <span class=\"ctooltip help\">Proxy<span class=\"ctooltiptext\">Velocity, ...</span></span> ODER auf allen <span class=\"ctooltip help\">backend Servern<span class=\"ctooltiptext\">Paper, Folia, Spigot, ...</span></span> installierst (empfohlenes Setup)";
+            document.getElementById("velocity").innerHTML = "Du brauchst <a href=\"https://papermc.io/downloads/velocity\" target=\"_blank\" rel=\"noopener\">Velocity</a> als Proxy f&uuml;r 1.7 Support";
             document.getElementById("java17").innerHTML = " ViaVersion (sowie die Erweiterungen) benötigen Java 17+ oder spezielle Builds, siehe <ahref=\"https://github.com/ViaVersion/ViaVersion/wiki/Java-Requirements\" target=\"_blank\">hier</a>"
             blockMessage = "F&uuml;ge folgende Nummern in der ViaVersion <code>$path</code> unter <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Klicke zum kopieren</span>[$output]</b></code> ein";
             toggleMessage = ["Alle w&auml;hlen", "Alle abw&auml;hlen"];
         },
         "pt": () => {
             document.getElementById("server_version_text").innerHTML = "Selecione a versão do servidor";
-            document.getElementById("proxy_text").innerHTML = "Quer usar os plugins Via* em um proxy (BungeeCord, Velocity, ...)?";
+            document.getElementById("proxy_text").innerHTML = "Quer usar os plugins Via* em um proxy (Velocity, BungeeCord, ...)?";
             document.getElementById("versions").innerHTML = "Selecione as versões para dar suporte";
             document.getElementById("out_text").innerHTML = "Você precisa de";
             document.getElementById("warn").innerHTML = "Selecione uma versão adicional!";
             document.getElementById("note").innerHTML = "Tenha certeza de que os plugins Via* estão somente no proxy ou nos servidores backend (configuração recomendada)";
-            blockMessage = "Insira estes números na <code>$path</code> do ViaVersion em <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Click to copy</span>[$output]</b></code>";//todo add translation
+            blockMessage = "Insira estes números na <code>$path</code> do ViaVersion em <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Click to copy</span>[$output]</b></code>";
             toggleMessage = ["Marcar tudo", "Desmarcar tudo"];
-            document.getElementById("velocity").innerHTML = "Você precisará do <a href='https://velocitypowered.com/' target='_blank' rel='noopener'>Velocity</a> como proxy para aceitar a versão 1.7";
+            document.getElementById("velocity").innerHTML = "Você precisará do <a href='https://papermc.io/downloads/velocity' target='_blank' rel='noopener'>Velocity</a> como proxy para aceitar a versão 1.7";
             document.getElementById("credits").innerHTML = "Feito com &hearts; por Jo0001";
         },
         "fr": () => {
             document.getElementById("server_version_text").innerHTML = "Sélectionnez votre version de serveur";
-            document.getElementById("proxy_text").innerHTML = "Voulez-vous installer les plugins Via* sur un proxy (BungeeCord, Velocity, ...) ?";
+            document.getElementById("proxy_text").innerHTML = "Voulez-vous installer les plugins Via* sur un proxy (Velocity, BungeeCord, ...) ?";
             document.getElementById("versions").innerHTML = "Cochez les versions que vous souhaitez supporter";
             document.getElementById("out_text").innerHTML = "Vous avez besoin de";
             document.getElementById("warn").innerHTML = "Veuillez cocher au moins une version supplémentaire !";
-            document.getElementById("note").innerHTML = "Assurez-vous d'installer Via* uniquement sur le <span class=\"ctooltip help\">proxy<span class=\"ctooltiptext\">Velocity, ...</span></span> OU sur chacun de vos <span class=\"ctooltip help\">serveurs<span class=\"ctooltiptext\">Paper, Spigot, ...</span></span> (recommandé)";
+            document.getElementById("note").innerHTML = "Assurez-vous d'installer Via* uniquement sur le <span class=\"ctooltip help\">proxy<span class=\"ctooltiptext\">Velocity, ...</span></span> OU sur chacun de vos <span class=\"ctooltip help\">serveurs<span class=\"ctooltiptext\">Paper, Folia, Spigot, ...</span></span> (recommandé)";
             blockMessage = "Collez ces nombres dans le fichier <code>$path</code> de ViaVersion à la ligne <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Clique pour copier</span>[$output]</b></code>";
             toggleMessage = ["Tout cocher", "Tout décocher"];
-            document.getElementById("velocity").innerHTML = "Vous avez besoin de <a href='https://velocitypowered.com/' target='_blank' rel='noopener'>Velocity</a> comme proxy pour autoriser la version 1.7";
+            document.getElementById("velocity").innerHTML = "Vous avez besoin de <a href='https://papermc.io/downloads/velocity' target='_blank' rel='noopener'>Velocity</a> comme proxy pour autoriser la version 1.7";
             document.getElementById("credits").innerHTML = "Fait avec &hearts; par Jo0001";
         }
     };
@@ -683,7 +683,6 @@
         check = !check;
         setCheckText();
         let player_versions = Array.from(document.getElementsByTagName("input"));
-        player_versions.shift();
         player_versions.forEach(it => {
             it.checked = check;
         });
