@@ -42,7 +42,7 @@
       "question": "What do you need help with?",
       "answers": {
         "I am looking for API documentation": "https://docs.viaversion.com/",
-        "I want to integrate ViaVersion projects in my own project": "https://github.com/ViaVersion/ViaLoader"
+        "I want to integrate ViaVersion projects in my own project": "https://docs.viaversion.com/"
       }
     }
   }
