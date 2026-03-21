@@ -128,7 +128,7 @@
       "items": [
         {
           "name": "ViaBungee",
-          "description": "ViaVersion, (and optional ViaBackwards, ViaRewind, ViaAprilFools) loader for BungeeCord/Waterfall",
+          "description": "ViaVersion, (and optional ViaBackwards, ViaRewind, ViaAprilFools) loader for BungeeCord (and Waterfall)",
           "url": "https://hangar.papermc.io/ViaVersion/ViaBungee/versions",
           "image": "images/viabungee.png",
           "details": {
