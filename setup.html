@@ -525,7 +525,6 @@
     };
     let toggleMessage = ["Check all", "Uncheck all"];
     let blockMessage = "Paste these numbers to the ViaVersion <code>$path</code> under <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Click to copy</span>[$output]</b></code>";
-    let path = "/plugins/ViaVersion/config.yml";
 
     let langIds = Object.keys(langs);
     if (!langIds.includes(lang)) {
@@ -564,6 +563,7 @@
         let backwards = player_versions.some(it => (it < server_version));
         let proxyType = document.getElementById("proxy").value;
         let proxy = proxyType !== "none";
+        let path = proxyType === "bungeecord" ? "/plugins/ViaVersion/viaversion.yml" : "/plugins/ViaVersion/config.yml";
         document.getElementById("out").innerHTML = " ViaVersion" + (backwards ? " + ViaBackwards" : "") + (rewind ? " + ViaRewind" : "") + (rewind && !proxy ? " (+ ViaRewind Legacy Support)" : "") + (proxyType === "bungeecord" ? " + ViaBungee" : "") + (proxyType === "sponge" ? " + ViaSponge" : "");
         generateBlockList();
         if (player_versions.includes(5) && proxy && proxyType !== "velocity") {
