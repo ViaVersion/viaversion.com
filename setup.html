@@ -199,9 +199,10 @@
     <label for="server_version" id="server_version_text">Select your server version</label>
     <select id="server_version" onchange="getPlugins()">
         <optgroup label="Latest">
-            <option value="774">🧟 1.21.11</option>
+            <option value="775">26.1</option>
         </optgroup>
         <optgroup label="1.21.x">
+            <option value="774">1.21.11</option>
             <option value="773">1.21.9 & 1.21.10</option>
             <option value="772">1.21.7 & 1.21.8</option>
             <option value="771">1.21.6</option>
@@ -304,9 +305,10 @@
         <br>
         <ul id="info_container">
             <li id="tip" class="li_info" style="display: none"></li>
-            <li id="velocity" class="li_info" style="display: none">You need <a href="https://papermc.io/downloads/velocity"
-                                                                                target="_blank"
-                                                                                rel="noopener">Velocity</a>
+            <li id="velocity" class="li_info" style="display: none">You need <a
+                    href="https://papermc.io/downloads/velocity"
+                    target="_blank"
+                    rel="noopener">Velocity</a>
                 as proxy for 1.7 support
             </li>
             <li id="note" class="li_info">Make sure you have Via* only on the <span class="ctooltip help">proxy<span
@@ -439,6 +441,9 @@
     }, {
         protocol: 774,
         version: "1.21.11"
+    }, {
+        protocol: 775,
+        version: "26.1"
     }
     ]);
 
