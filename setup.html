@@ -11,7 +11,7 @@
     <meta name="description"
           content="This tool will guide you on installing & configuring ViaVersion and its addons depending on your paper/spigot/bungee/velocity server setup">
     <meta name="keywords"
-          content="viaversion, viabackwards, viarewind, sponge, viabungee, velocity, setup, plugin, install, configuration, java-edition, protocol translator, addon, minecraft server, paper, velocity, waterfall, bungeecord, spigot, block-version, block-protocols, proxy">
+          content="viaversion, viabackwards, viarewind, sponge, velocity, setup, plugin, install, configuration, java-edition, protocol translator, addon, minecraft server, paper, velocity, waterfall, bungeecord, spigot, block-version, block-protocols, proxy">
     <meta property="og:type" content="website"/>
     <meta property="og:image" content="https://avatars0.githubusercontent.com/u/47455182?s=128&t=1">
     <meta property="og:url" content="https://viaversion.com/setup"/>
@@ -26,6 +26,7 @@
     <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
             integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
             crossorigin="anonymous"></script>
+    <script src="dl-helper.js" async></script>
     <style>
         body {
             background-color: #585962;
@@ -199,13 +200,9 @@
     <label for="server_version" id="server_version_text">Select your server version</label>
     <select id="server_version" onchange="getPlugins()">
         <optgroup label="Latest">
-            <option value="776">💦 26.2</option>
-        </optgroup>
-        <optgroup label="26.x">
-            <option value="775">26.1.x</option>
+            <option value="774">🧟 1.21.11</option>
         </optgroup>
         <optgroup label="1.21.x">
-            <option value="774">1.21.11</option>
             <option value="773">1.21.9 & 1.21.10</option>
             <option value="772">1.21.7 & 1.21.8</option>
             <option value="771">1.21.6</option>
@@ -281,11 +278,11 @@
         </optgroup>
     </select>
     <br>
-    <label for="proxy" id="proxy_text">Do you want to install Via* on a proxy (Velocity, Bungee...)?</label>
+    <label for="proxy" id="proxy_text">Do you want to install Via* on a proxy (Bungee, Velocity,...)?</label>
     <select id="proxy" onchange="getPlugins()">
         <option id="pNo" value="none">No</option>
         <option value="velocity">Velocity</option>
-        <option value="bungeecord">BungeeCord (Waterfall)</option>
+        <option value="bungeecord" id="pBungee" disabled>BungeeCord - not supported</option>
         <option value="sponge">Sponge</option>
         <option value="other" id="pOther">Other</option>
     </select>
@@ -315,15 +312,12 @@
                 as proxy for 1.7 support
             </li>
             <li id="note" class="li_info">Make sure you have Via* only on the <span class="ctooltip help">proxy<span
-                    class="ctooltiptext">Velocity, BungeeCord, ...</span></span>
+                    class="ctooltiptext">Velocity, ...</span></span>
                 OR on all <span class="ctooltip help">backend servers<span
                         class="ctooltiptext">Paper, Spigot, ...</span></span>
                 (recommend
                 setup)
             </li>
-            <li id="viabungee" class="li_info" style="display: none">
-                Put <code>ViaBungee</code> into your Bungeecord/Waterfall plugins folder and put ViaVersion (and its
-                addons) in <code>/plugins/ViaVersion/</code>
             <li id="java17" class="li_info" style="display: none">
                 ViaVersion (and its addons) require java 17+ or special builds. See <a
                     href="https://github.com/ViaVersion/ViaVersion/wiki/Java-Requirements" target="_blank">Docs</a>
@@ -444,13 +438,6 @@
     }, {
         protocol: 774,
         version: "1.21.11"
-    }, {
-        protocol: 775,
-        version: "26.1",
-        display: "26.1.x"
-    }, {
-        protocol: 776,
-        version: "26.2"
     }
     ]);
 
@@ -500,12 +487,12 @@
             document.getElementById("proxy_text").innerHTML = "M&ouml;chtest du Via* auf einem Proxy installieren (Velocity, Bungee,..)?";
             document.getElementById("pNo").innerHTML = "Nein";
             document.getElementById("pOther").innerHTML = "Anderer";
+            document.getElementById("pBungee").innerHTML = "BungeeCord - nicht unterst&uuml;tzt";
             document.getElementById("versions").innerHTML = "Klicke alle Versionen an, mit denen Spieler beitreten sollen";
             document.getElementById("out_text").innerHTML = "Du brauchst";
             document.getElementById("warn").innerHTML = "Bitte w&auml;hle eine weitere Version aus!";
-            document.getElementById("note").innerHTML = "Stelle sicher, dass du Via* nur auf dem <span class=\"ctooltip help\">Proxy<span class=\"ctooltiptext\">Velocity, BungeeCord, ...</span></span> ODER auf allen <span class=\"ctooltip help\">backend Servern<span class=\"ctooltiptext\">Paper, Folia, Spigot, ...</span></span> installierst (empfohlenes Setup)";
+            document.getElementById("note").innerHTML = "Stelle sicher, dass du Via* nur auf dem <span class=\"ctooltip help\">Proxy<span class=\"ctooltiptext\">Velocity, ...</span></span> ODER auf allen <span class=\"ctooltip help\">backend Servern<span class=\"ctooltiptext\">Paper, Folia, Spigot, ...</span></span> installierst (empfohlenes Setup)";
             document.getElementById("velocity").innerHTML = "Du brauchst <a href=\"https://papermc.io/downloads/velocity\" target=\"_blank\" rel=\"noopener\">Velocity</a> als Proxy f&uuml;r 1.7 Support";
-            document.getElementById("viabungee").innerHTML = " Kopiere <code>ViaBungee</code> in den Bungee/Waterfall plugin Ordner und kopiere ViaVersion (und die Erweiterungen) nach <code>/plugins/ViaVersion/</code>";
             document.getElementById("java17").innerHTML = " ViaVersion (sowie die Erweiterungen) benötigen Java 17+ oder spezielle Builds, siehe <ahref=\"https://github.com/ViaVersion/ViaVersion/wiki/Java-Requirements\" target=\"_blank\">hier</a>"
             blockMessage = "F&uuml;ge folgende Nummern in der ViaVersion <code>$path</code> unter <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Klicke zum kopieren</span>[$output]</b></code> ein";
             toggleMessage = ["Alle w&auml;hlen", "Alle abw&auml;hlen"];
@@ -528,7 +515,7 @@
             document.getElementById("versions").innerHTML = "Cochez les versions que vous souhaitez supporter";
             document.getElementById("out_text").innerHTML = "Vous avez besoin de";
             document.getElementById("warn").innerHTML = "Veuillez cocher au moins une version supplémentaire !";
-            document.getElementById("note").innerHTML = "Assurez-vous d'installer Via* uniquement sur le <span class=\"ctooltip help\">proxy<span class=\"ctooltiptext\">Velocity, BungeeCord, ...</span></span> OU sur chacun de vos <span class=\"ctooltip help\">serveurs<span class=\"ctooltiptext\">Paper, Folia, Spigot, ...</span></span> (recommandé)";
+            document.getElementById("note").innerHTML = "Assurez-vous d'installer Via* uniquement sur le <span class=\"ctooltip help\">proxy<span class=\"ctooltiptext\">Velocity, ...</span></span> OU sur chacun de vos <span class=\"ctooltip help\">serveurs<span class=\"ctooltiptext\">Paper, Folia, Spigot, ...</span></span> (recommandé)";
             blockMessage = "Collez ces nombres dans le fichier <code>$path</code> de ViaVersion à la ligne <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Clique pour copier</span>[$output]</b></code>";
             toggleMessage = ["Tout cocher", "Tout décocher"];
             document.getElementById("velocity").innerHTML = "Vous avez besoin de <a href='https://papermc.io/downloads/velocity' target='_blank' rel='noopener'>Velocity</a> comme proxy pour autoriser la version 1.7";
@@ -537,6 +524,7 @@
     };
     let toggleMessage = ["Check all", "Uncheck all"];
     let blockMessage = "Paste these numbers to the ViaVersion <code>$path</code> under <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Click to copy</span>[$output]</b></code>";
+    let path = "/plugins/ViaVersion/config.yml";
 
     let langIds = Object.keys(langs);
     if (!langIds.includes(lang)) {
@@ -575,23 +563,21 @@
         let backwards = player_versions.some(it => (it < server_version));
         let proxyType = document.getElementById("proxy").value;
         let proxy = proxyType !== "none";
-        let path = proxyType === "bungeecord" ? "/plugins/ViaVersion/viaversion.yml" : "/plugins/ViaVersion/config.yml";
-        document.getElementById("out").innerHTML = " ViaVersion" + (backwards ? " + ViaBackwards" : "") + (rewind ? " + ViaRewind" : "") + (rewind && !proxy ? " (+ ViaRewind Legacy Support)" : "") + (proxyType === "bungeecord" ? " + ViaBungee" : "") + (proxyType === "sponge" ? " + ViaSponge" : "");
+        document.getElementById("out").innerHTML = getDlElement("ViaVersion") + (backwards ? " + " + getDlElement("ViaBackwards") : "") + (rewind ? " + " + getDlElement("ViaRewind") : "") + (rewind && !proxy ? " (+ " + getDlElement("ViaRewindLegacySupport") + ")" : "") + (proxyType === "sponge" ? " + " + getDlElement("ViaSponge") : "");
         generateBlockList();
         if (player_versions.includes(5) && proxy && proxyType !== "velocity") {
             document.getElementById("velocity").style.display = "list-item";
         } else {
             document.getElementById("velocity").style.display = "none";
         }
-        if (proxyType === "bungeecord") {
-            document.getElementById("viabungee").style.display = "list-item";
-        } else {
-            document.getElementById("viabungee").style.display = "none";
-        }
         if (server_version < 757) {
             document.getElementById("java17").style.display = "list-item";
         } else {
             document.getElementById("java17").style.display = "none";
+        }
+
+        function getDlElement(name) {
+            return " <a href='" + urls.get(name.toLowerCase()) + "' target='_blank'><i class='bi bi-download'></i>" + name + "</a>"
         }
 
         function generateBlockList() {
