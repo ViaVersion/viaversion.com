@@ -200,9 +200,13 @@
     <label for="server_version" id="server_version_text">Select your server version</label>
     <select id="server_version" onchange="getPlugins()">
         <optgroup label="Latest">
-            <option value="774">🧟 1.21.11</option>
+            <option value="776">💦 26.2</option>
+        </optgroup>
+        <optgroup label="26.x">
+            <option value="775">26.1.x</option>
         </optgroup>
         <optgroup label="1.21.x">
+            <option value="774">1.21.11</option>
             <option value="773">1.21.9 & 1.21.10</option>
             <option value="772">1.21.7 & 1.21.8</option>
             <option value="771">1.21.6</option>
@@ -438,6 +442,13 @@
     }, {
         protocol: 774,
         version: "1.21.11"
+    }, {
+        protocol: 775,
+        version: "26.1",
+        display: "26.1.x"
+    }, {
+        protocol: 776,
+        version: "26.2"
     }
     ]);
 
