@@ -2,7 +2,7 @@
 <html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <title>Setup | ViaVersion</title>
+    <title>Setup & Install | ViaVersion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" sizes="128x128" href="https://avatars0.githubusercontent.com/u/47455182?s=128">
     <link rel="alternate" href="https://viaversion.com/setup?lang=de" hreflang="de-DE">
@@ -15,7 +15,7 @@
     <meta property="og:type" content="website"/>
     <meta property="og:image" content="https://avatars0.githubusercontent.com/u/47455182?s=128&t=1">
     <meta property="og:url" content="https://viaversion.com/setup"/>
-    <meta property="og:site_name" content="ViaVersion Setup"/>
+    <meta property="og:site_name" content="ViaVersion Setup & Install"/>
     <meta property="og:title" content="ViaSetup - Plugin Setup Generator for Via*"/>
     <meta property="og:description"
           content="This tool will guide you on installing and configuring ViaVersion and its addons depending on your server setup">
@@ -196,91 +196,9 @@
     </nav>
 </header>
 <div class="center">
-    <h3>ViaSetup - Plugin Setup Generator for Via*</h3>
+    <h3>ViaSetup - Plugin Setup & Installation Generator for Via*</h3>
     <label for="server_version" id="server_version_text">Select your server version</label>
-    <select id="server_version" onchange="getPlugins()">
-        <optgroup label="Latest">
-            <option value="776">💦 26.2</option>
-        </optgroup>
-        <optgroup label="26.x">
-            <option value="775">26.1.x</option>
-        </optgroup>
-        <optgroup label="1.21.x">
-            <option value="774">1.21.11</option>
-            <option value="773">1.21.9 & 1.21.10</option>
-            <option value="772">1.21.7 & 1.21.8</option>
-            <option value="771">1.21.6</option>
-            <option value="770">1.21.5</option>
-            <option value="769">1.21.4</option>
-            <option value="768">1.21.2 & 1.21.3</option>
-            <option value="767">1.21 & 1.21.1</option>
-        </optgroup>
-        <optgroup label="1.20.x">
-            <option value="766">1.20.5 & 1.20.6</option>
-            <option value="765">1.20.3 & 1.20.4</option>
-            <option value="764">1.20.2</option>
-            <option value="763">1.20 & 1.20.1</option>
-        </optgroup>
-        <optgroup label="1.19.x">
-            <option value="762">1.19.4</option>
-            <option value="761">1.19.3</option>
-            <option value="760">1.19.1 & 1.19.2</option>
-            <option value="759">1.19</option>
-        </optgroup>
-        <optgroup label="1.18.x">
-            <option value="758">1.18.2</option>
-            <option value="757">1.18 & 1.18.1</option>
-        </optgroup>
-        <optgroup label="1.17.x">
-            <option value="756">1.17.1</option>
-            <option value="755">1.17</option>
-        </optgroup>
-        <optgroup label="1.16.x">
-            <option value="754">1.16.4 & 1.16.5</option>
-            <option value="753">1.16.3</option>
-            <option value="751">1.16.2</option>
-            <option value="736">1.16.1</option>
-            <option value="735">1.16</option>
-        </optgroup>
-        <optgroup label="1.15.x">
-            <option value="578">1.15.2</option>
-            <option value="575">1.15.1</option>
-            <option value="573">1.15</option>
-        </optgroup>
-        <optgroup label="1.14.x">
-            <option value="498">1.14.4</option>
-            <option value="490">1.14.3</option>
-            <option value="485">1.14.2</option>
-            <option value="480">1.14.1</option>
-            <option value="477">1.14</option>
-        </optgroup>
-        <optgroup label="1.13.x">
-            <option value="404">1.13.2</option>
-            <option value="401">1.13.1</option>
-            <option value="393">1.13</option>
-        </optgroup>
-        <optgroup label="1.12.x">
-            <option value="340">1.12.2</option>
-            <option value="338">1.12.1</option>
-            <option value="335">1.12</option>
-        </optgroup>
-        <optgroup label="1.11.x">
-            <option value="316">1.11.1 & 1.11.2</option>
-            <option value="315">1.11</option>
-        </optgroup>
-        <optgroup label="1.10.x">
-            <option value="210">1.10.x</option>
-        </optgroup>
-        <optgroup label="1.9.x">
-            <option value="110">1.9.3 & 1.9.4</option>
-            <option value="109">1.9.2</option>
-            <option value="108">1.9.1</option>
-            <option value="107">1.9</option>
-        </optgroup>
-        <optgroup label="1.8.8 Legacy">
-            <option value="47">1.8.8</option>
-        </optgroup>
-    </select>
+    <select id="server_version" onchange="getPlugins()"></select>
     <br>
     <label for="proxy" id="proxy_text">Do you want to install Via* on a proxy (Bungee, Velocity,...)?</label>
     <select id="proxy" onchange="getPlugins()">
@@ -368,8 +286,6 @@
     </div>
 </footer>
 <script>
-
-
     let versions = Array.from([{protocol: 5, version: "1.7", display: "1.7.x"}, {
         protocol: 47,
         version: "1.8",
@@ -450,7 +366,29 @@
         protocol: 776,
         version: "26.2"
     }
-    ]);
+    ]).reverse();
+
+    //generate select options
+    let previousMajorMinor = null;
+    let optgroup = null;
+    let first = true;
+    versions.filter((version) => version.protocol >= 47).forEach((version) => {
+        const option = document.createElement("option");
+        option.value = version.protocol;
+        option.textContent = version.display || version.version;
+        if (version.version.startsWith("1.8")) {
+            option.textContent = "1.8.8";
+        }
+        const majorMinor = version.version.split(".").slice(0, 2).join(".");
+        if (majorMinor !== previousMajorMinor) {
+            optgroup = document.createElement("optgroup");
+            optgroup.label = first ? "Latest" : majorMinor + ".x";
+            document.getElementById("server_version").appendChild(optgroup);
+        }
+        previousMajorMinor = majorMinor;
+        optgroup.appendChild(option);
+        first = false;
+    });
 
     let server_version = parseInt(document.getElementById("server_version").value);
     const container = "col-sm-4";
