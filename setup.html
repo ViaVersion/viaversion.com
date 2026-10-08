@@ -204,7 +204,7 @@
     <select id="proxy" onchange="getPlugins()">
         <option id="pNo" value="none">No</option>
         <option value="velocity">Velocity</option>
-        <option value="bungeecord" id="pBungee" disabled>BungeeCord - not supported</option>
+        <option value="bungeecord" id="pBungee">BungeeCord</option>
         <option value="sponge">Sponge</option>
         <option value="other" id="pOther">Other</option>
     </select>
@@ -243,6 +243,10 @@
             <li id="java17" class="li_info" style="display: none">
                 ViaVersion (and its addons) require java 17+ or special builds. See <a
                     href="https://github.com/ViaVersion/ViaVersion/wiki/Java-Requirements" target="_blank">Docs</a>
+            </li>
+            <li id="viabungee" class="li_info" style="display: none">
+                Put <code>ViaBungee</code> into your Bungeecord plugins folder and put ViaVersion (and its
+                addons) in <code>/plugins/ViaVersion/</code>
             </li>
         </ul>
     </div>
@@ -439,13 +443,14 @@
             document.getElementById("proxy_text").innerHTML = "M&ouml;chtest du Via* auf einem Proxy installieren (Velocity, Bungee,..)?";
             document.getElementById("pNo").innerHTML = "Nein";
             document.getElementById("pOther").innerHTML = "Anderer";
-            document.getElementById("pBungee").innerHTML = "BungeeCord - nicht unterst&uuml;tzt";
+            document.getElementById("pBungee").innerHTML = "BungeeCord";
             document.getElementById("versions").innerHTML = "Klicke alle Versionen an, mit denen Spieler beitreten sollen";
             document.getElementById("out_text").innerHTML = "Du brauchst";
             document.getElementById("warn").innerHTML = "Bitte w&auml;hle eine weitere Version aus!";
             document.getElementById("note").innerHTML = "Stelle sicher, dass du Via* nur auf dem <span class=\"ctooltip help\">Proxy<span class=\"ctooltiptext\">Velocity, ...</span></span> ODER auf allen <span class=\"ctooltip help\">backend Servern<span class=\"ctooltiptext\">Paper, Folia, Spigot, ...</span></span> installierst (empfohlenes Setup)";
             document.getElementById("velocity").innerHTML = "Du brauchst <a href=\"https://papermc.io/downloads/velocity\" target=\"_blank\" rel=\"noopener\">Velocity</a> als Proxy f&uuml;r 1.7 Support";
             document.getElementById("java17").innerHTML = " ViaVersion (sowie die Erweiterungen) benötigen Java 17+ oder spezielle Builds, siehe <ahref=\"https://github.com/ViaVersion/ViaVersion/wiki/Java-Requirements\" target=\"_blank\">hier</a>"
+            document.getElementById("viabungee").innerHTML = " Kopiere <code>ViaBungee</code> in den Bungee Plugin Ordner und kopiere ViaVersion (und die Erweiterungen) nach <code>/plugins/ViaVersion/</code>";
             blockMessage = "F&uuml;ge folgende Nummern in der ViaVersion <code>$path</code> unter <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Klicke zum kopieren</span>[$output]</b></code> ein";
             toggleMessage = ["Alle w&auml;hlen", "Alle abw&auml;hlen"];
         },
@@ -515,7 +520,8 @@
         let backwards = player_versions.some(it => (it < server_version));
         let proxyType = document.getElementById("proxy").value;
         let proxy = proxyType !== "none";
-        document.getElementById("out").innerHTML = getDlElement("ViaVersion") + (backwards ? " + " + getDlElement("ViaBackwards") : "") + (rewind ? " + " + getDlElement("ViaRewind") : "") + (rewind && !proxy ? " (+ " + getDlElement("ViaRewindLegacySupport") + ")" : "") + (proxyType === "sponge" ? " + " + getDlElement("ViaSponge") : "");
+        const requireViaBungee = proxyType === "bungeecord";
+        document.getElementById("out").innerHTML = getDlElement("ViaVersion") + (backwards ? " + " + getDlElement("ViaBackwards") : "") + (rewind ? " + " + getDlElement("ViaRewind") : "") + (rewind && !proxy ? " (+ " + getDlElement("ViaRewindLegacySupport") + ")" : "") + (proxyType === "sponge" ? " + " + getDlElement("ViaSponge") : "")+ (requireViaBungee ? " + " + getDlElement("ViaBungee") : "");
         generateBlockList();
         if (player_versions.includes(5) && proxy && proxyType !== "velocity") {
             document.getElementById("velocity").style.display = "list-item";
@@ -526,6 +532,11 @@
             document.getElementById("java17").style.display = "list-item";
         } else {
             document.getElementById("java17").style.display = "none";
+        }
+        if (requireViaBungee) {
+            document.getElementById("viabungee").style.display = "list-item";
+        } else {
+            document.getElementById("viabungee").style.display = "none";
         }
 
         function getDlElement(name) {
