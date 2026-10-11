@@ -506,7 +506,7 @@
             return it.checked;
         }).map(it => parseInt(it.value)).filter(function (item) {
             return !isNaN(item);
-        });
+        }).reverse();
         if (player_versions.includes(server_version) && player_versions.length === 1) {
             document.getElementById("output_container").style.display = "none";
             document.getElementById("warn").style.display = "inline-block";
@@ -521,7 +521,7 @@
         let proxyType = document.getElementById("proxy").value;
         let proxy = proxyType !== "none";
         const requireViaBungee = proxyType === "bungeecord";
-        document.getElementById("out").innerHTML = getDlElement("ViaVersion") + (backwards ? " + " + getDlElement("ViaBackwards") : "") + (rewind ? " + " + getDlElement("ViaRewind") : "") + (rewind && !proxy ? " (+ " + getDlElement("ViaRewindLegacySupport") + ")" : "") + (proxyType === "sponge" ? " + " + getDlElement("ViaSponge") : "")+ (requireViaBungee ? " + " + getDlElement("ViaBungee") : "");
+        document.getElementById("out").innerHTML = getDlElement("ViaVersion") + (backwards ? " + " + getDlElement("ViaBackwards") : "") + (rewind ? " + " + getDlElement("ViaRewind") : "") + (rewind && !proxy ? " (+ " + getDlElement("ViaRewindLegacySupport") + ")" : "") + (proxyType === "sponge" ? " + " + getDlElement("ViaSponge") : "") + (requireViaBungee ? " + " + getDlElement("ViaBungee") : "");
         generateBlockList();
         if (player_versions.includes(5) && proxy && proxyType !== "velocity") {
             document.getElementById("velocity").style.display = "list-item";
