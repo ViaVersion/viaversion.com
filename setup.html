@@ -248,6 +248,8 @@
                 Put <code>ViaBungee</code> into your Bungeecord plugins folder and put ViaVersion (and its
                 addons) in <code>/plugins/ViaVersion/</code>
             </li>
+            <li id="exploit" class="li_info" style="display: none">
+            </li>
         </ul>
     </div>
 </div>
@@ -453,6 +455,9 @@
             document.getElementById("viabungee").innerHTML = " Kopiere <code>ViaBungee</code> in den Bungee Plugin Ordner und kopiere ViaVersion (und die Erweiterungen) nach <code>/plugins/ViaVersion/</code>";
             blockMessage = "F&uuml;ge folgende Nummern in der ViaVersion <code>$path</code> unter <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Klicke zum kopieren</span>[$output]</b></code> ein";
             toggleMessage = ["Alle w&auml;hlen", "Alle abw&auml;hlen"];
+            exploitMessage = ["Das Vanilla-Protokoll von Minecraft 1.20.5–1.21.4 lässt sich leicht exploiten. Bitte erwäge, deinen Server auf mindestens Version 1.21.5 zu updaten.",
+                "Das Vanilla-Protokoll von Minecraft 1.20.5–1.21.4 lässt sich leicht exploiten. Wenn du diese Versionen nicht unterstützen musst, solltest du diese blocken (kein Haken setzen)"];
+
         },
         "pt": () => {
             document.getElementById("server_version_text").innerHTML = "Selecione a versão do servidor";
@@ -482,6 +487,8 @@
     let toggleMessage = ["Check all", "Uncheck all"];
     let blockMessage = "Paste these numbers to the ViaVersion <code>$path</code> under <code>block-versions: <b class='ctooltip'><span class='ctooltiptext'>Click to copy</span>[$output]</b></code>";
     let path = "/plugins/ViaVersion/config.yml";
+    let exploitMessage = ["The Vanilla protocol of Minecraft 1.20.5-1.21.4 is exploitable easily. Please consider updating your server to at least 1.21.5",
+        "The Vanilla protocol of Minecraft 1.20.5-1.21.4 is easily exploitable. If you don't need to support these versions, consider blocking them (don't tick the box for those)"];
 
     let langIds = Object.keys(langs);
     if (!langIds.includes(lang)) {
@@ -497,6 +504,8 @@
     langs[lang]();
 
     document.getElementById("check").addEventListener('click', toggleCheck)
+
+    const warningVersion = [766, 767, 768, 769]
 
     //Plugin generation
     function getPlugins() {
@@ -538,6 +547,20 @@
         } else {
             document.getElementById("viabungee").style.display = "none";
         }
+
+        const exploitInfo = document.getElementById("exploit");
+        if (!proxy && warningVersion.includes(server_version)) {
+            exploitInfo.style.display = "list-item";
+            exploitInfo.innerText = exploitMessage[0];
+        } else {
+            if (player_versions.some(e => warningVersion.includes(e))) {
+                exploitInfo.style.display = "list-item";
+                exploitInfo.innerText = exploitMessage[1];
+            } else {
+                exploitInfo.style.display = "none";
+            }
+        }
+
 
         function getDlElement(name) {
             return " <a href='" + urls.get(name.toLowerCase()) + "' target='_blank'><i class='bi bi-download'></i>" + name + "</a>"
